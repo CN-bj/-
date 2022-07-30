@@ -1,0 +1,39 @@
+1.后台模板项目地址：
+    https://github.com/PanJiaChen/vue-admin-template(简洁版)
+    https://github.com/PanJiaChen/vue-element-admin(加强版)
+
+2. src文件夹:
+    build/index.js:       是 webpack 配置文件.
+    icons:                放置了一些 svg 矢量图.
+    utils/requests.js:    是axios的二次封装文件.
+    permission.js:        导航守卫相关的文件.
+    settings.js:          配置项文件.
+    .editorconfig:        代码风格配置文件.
+    .env.development:    baseURL
+
+    views:
+        product:商品文件夹.
+            TradeMark: 品牌管理模块.
+            Attr: 平台管理模块.
+            spu: 商品分类
+        
+        permission,role,user: 权限管理模块
+        
+        dashboard:首页文件夹
+            Card: 顶部四个小方块的组件.
+                Detail: 每个小方块组件内容.
+                    LineChart: 折线图组件.
+                    BarChart: 柱状图组件.
+                    ProgressChart: 进度条组件(顶部第四个框框组件).
+            
+            Sale: 中间销售额模块.
+            Observe:最下面热门搜索组件
+
+    components: 
+        CategorySelect: 三级联动组件.
+        HintButton: button 组件.
+
+    mock:
+        home.js: 首页echarts的文件.
+        data.json: 首页echarts的模拟数据
+            

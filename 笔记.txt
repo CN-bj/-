@@ -1,0 +1,46 @@
+1.Vue.$set(对象,'新的属性名',属性值);
+     因为Vue无法探测普通元素新增的属性，这样书写的属性不是响应式的，所以这里用Vue.$set. 
+     向响应式对象中添加一个 property，并确保这个新 property 同样是响应式的，且触发视图更新。
+
+2.delete 操作符用于删除对象的某个属性；
+
+3.这里面发请求不能写在 mounted 中,因为子组件已经挂载在父组件身上,当父组件页面加载完毕时子组件的
+  mounted就会调用,所以当再次点击添加或者修改按钮时,mounted中的发送请求的函数就不会再执行了,就
+  无法获取数据所以采用的是在父组件中通过ref获取到子组件,然后点击按钮时调用子组件的方法getSpuData 再发送请求.
+
+4.Form 表单:
+     (1) model属性: 表单数据对象,主要用来做表单验证.
+     (2) v-model绑定的值与 option 选项的 value 值对应.
+     (3) label值为显示的标签.
+     
+5.table 表格:
+     (1)prop绑定的是:data数组中每一个元素对应的值.
+
+6.分页器:
+      current-page: 当前在第几页. 
+      page-size: 代表一页展示多少条数据.
+      page-sizes: 每页显示个数选择器的选项设置.
+      pager-count: 下面的页面按钮显示几个.
+      layout: 可以实现分页器布局(->:后面的在最右侧), 
+      jumper: Go to;   siezs: 3/page
+      total: Total 99 
+      @current-change: 当前页改变时会触发(page).(两种写法,如下)
+      @size-change: 每页条数发生变化时触发(limit).(两种写法,如下)
+
+      <el-pagination
+      style="margin-top: 20px; text-align: center"
+      :current-page="page"
+      :total="total"
+      :page-size="limit"
+      :page-sizes="[3, 5, 10]"
+      :pager-count="7"
+      @current-change="handleCurrentChange"
+      @size-change="(limit) => handleSizeChange(limit)"
+      layout="prev, pager, next,jumper,->,sizes,total"
+      >
+      </el-pagination>
+
+7.深度选择器:
+     (1)原生CSS: >>>
+     (2)less: /deep/
+     (3)sass: ::v-deep
